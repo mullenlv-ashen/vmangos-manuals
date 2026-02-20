@@ -1,0 +1,13 @@
+[Unit]
+Description=Scheduled-Restart-realmd
+After=default.target
+
+[Service]
+ExecStart=/home/vmangos_server/run/bin/realmd -c /home/vmangos_server/run/etc/realmd.conf
+User=vmangos_user
+StandardOutput=null
+Restart=always
+RuntimeMaxSec=3600
+
+[Install]
+WantedBy=default.target

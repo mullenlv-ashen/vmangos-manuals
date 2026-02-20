@@ -1,0 +1,19 @@
+[Unit]
+Description=mangosd service
+After=network.target mysql.service
+
+[Service]
+Type=simple
+User=vmangos_ashen
+ExecStart=/home/vmangos_server/run/bin/mangosd -c /home/vmangos_server/run/etc/mangosd.conf
+
+StandardInput=tty
+TTYPath=/dev/tty3
+TTYReset=yes
+TTYVHangup=yes
+
+Restart=on-failure
+RestartSec=30s
+
+[Install]
+WantedBy=default.target

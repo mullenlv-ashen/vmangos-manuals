@@ -1,0 +1,16 @@
+[Unit]
+Description=Run Website as a service
+
+[Service]
+Type=simple
+User=website_user
+Restart=always
+WorkingDirectory=/home/website/nuxt-app
+ExecStart=npm run start -- --port <YOUR_DESIRED_PORT>
+
+# The log file paths can be customised
+StandardOutput=file:/var/log/website-out.log
+StandardError=file:/var/log/website-err.log
+
+[Install]
+WantedBy=multi-user.target

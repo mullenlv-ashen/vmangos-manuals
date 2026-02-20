@@ -1,0 +1,22 @@
+[Unit]
+Description=Run Discord Bot as a service
+
+[Service]
+Type=simple
+User=discord_bot
+Restart=always
+WorkingDirectory=/home/discordbot
+# To start with some proxy if discord is blocked in your country
+#ExecStart=proxychains4 node /home/discordbot/index.js
+
+# To start normally
+ExecStart=node /home/discordbot/index.js
+
+# The log file paths can be customised
+StandardOutput=file:/var/log/vmangos-discordbot-out.log
+StandardError=file:/var/log/vmangos-discordbot-err.log
+#StandardOutput=null
+#StandardError=null
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,14 @@
+[Unit]
+Description=Run Discord Proxy as a service
+
+[Service]
+Type=simple
+Restart=always
+ExecStart=ssh -N -D 1080 root@your-desired-server-to-bypass-cencorship
+
+# The log file paths can be customised
+StandardOutput=file:/var/log/proxychains4-out.log
+StandardError=file:/var/log/proxychains4-err.log
+
+[Install]
+WantedBy=multi-user.target
