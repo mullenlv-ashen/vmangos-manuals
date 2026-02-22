@@ -5,6 +5,11 @@ And https://www.haproxy.com/blog/introduction-to-haproxy-logging
 # In order to get in work we must modify the core and add balancer(s) ip addresses
 https://github.com/Wall-core/AshenWoW/commit/a85e82f2ae550a95d5438c090f5a32fa09af887b
 ![img.png](img.png)
+
+# And add servers in the database 'mangos_login.realmlist'
+
+![img_1.png](img_1.png)
+
 ---
 
 ##### 1. First you'd want to set up basic auth with ssh keys.
