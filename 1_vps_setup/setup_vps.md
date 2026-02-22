@@ -38,7 +38,7 @@ ufw enable
 
 ##### 5. Install dependencies
 (Not all of them are required for your server)
-```apt-get install mariadb-server nginx git rsync proxychains4 npm libtbb-dev htop -y```
+```apt-get install mariadb-server nginx git rsync proxychains4 npm mc libtbb-dev htop -y```
 
 ##### 6. Create user
 For the website systemd service.
