@@ -36,7 +36,16 @@ ufw enable
 ```
 `apt-get install fail2ban -y && systemctl enable --now fail2ban`
 
-##### 5. Install dependencies
+##### 5. Install dependencies and disable swap
+Disable swap firstly
+
+```
+cat /proc/swaps \
+&& swapoff -a \
+&& sed -i 's/\/swap\.img/\#swap\.img/' /etc/fstab \
+&& cat /proc/swaps
+```
+
 (Not all of them are required for your server)
 ```apt-get install mariadb-server nginx git rsync proxychains4 npm mc libtbb-dev htop -y```
 
