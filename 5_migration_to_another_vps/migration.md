@@ -133,6 +133,8 @@ type <YOUR_PASSWORD>
 groupadd vmangos_group
 usermod -aG vmangos_group vmangos_user
 chown -R vmangos_user:vmangos_group /home/vmangos_server
+chown -R vmangos_user:vmangos_group /home/vmangos_server/run/bin/logs
+chmod 750 /home/vmangos_server/run/bin/logs
 ```
 
 
