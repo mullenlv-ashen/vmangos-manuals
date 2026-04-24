@@ -6,6 +6,7 @@ After=network.target mysql.service
 Type=simple
 User=vmangos_ashen
 ExecStart=/home/vmangos_server/run/bin/mangosd -c /home/vmangos_server/run/etc/mangosd.conf
+LimitNOFILE=100000
 
 StandardInput=tty
 TTYPath=/dev/tty3

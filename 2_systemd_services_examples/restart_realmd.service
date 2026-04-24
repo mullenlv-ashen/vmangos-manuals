@@ -8,6 +8,7 @@ User=vmangos_user
 StandardOutput=null
 Restart=always
 RuntimeMaxSec=3600
+LimitNOFILE=100000
 
 [Install]
 WantedBy=default.target
