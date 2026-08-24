@@ -148,9 +148,9 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 in lieu of restarting the shell
 . "$HOME/.nvm/nvm.sh"
 Download and install Node.js:
-nvm install 20
+nvm install 24
 Verify the Node.js version:
-node -v # Should print "v20.19.6".
+node -v # Should print "v20.20.0".
 Verify npm version:
 npm -v # Should print "10.8.2".
 ```
@@ -183,6 +183,15 @@ systemctl enable restart_realmd.service
 systemctl enable mangosd.service
 systemctl start restart_realmd.service
 systemctl start mangosd.service
+```
+
+In case of server not running (i.e. Illegal instruction (core dumped) which may caused by different processors) we need to rebuild the core
+
+```
+sudo apt install -y build-essential g++ git cmake mariadb-server libmariadb-dev libssl-dev zlib1g-dev libboost-all-dev
+cd /home/vmangos_server/build/
+make -j4
+make install
 ```
 
 ##### 14. Change your server IP in haproxy balancer config and restart the balancer
